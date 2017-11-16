@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115181346) do
+ActiveRecord::Schema.define(version: 20171116205913) do
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "social_reason"
+    t.string   "email_company"
+    t.string   "address_company"
+    t.string   "tel_company"
+    t.string   "legal_status"
+    t.string   "num_tva"
+    t.string   "rcs"
+    t.string   "ape_code"
+    t.string   "description"
+    t.string   "offer"
+    t.string   "product"
+    t.string   "creation_date"
+    t.integer  "staff"
+    t.integer  "turnover"
+    t.string   "website"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,11 +54,15 @@ ActiveRecord::Schema.define(version: 20171115181346) do
     t.string   "last_name"
     t.string   "social_reason"
     t.string   "profil"
-    t.integer  "siret"
-    t.integer  "tel"
+    t.string   "siret"
+    t.string   "tel"
     t.string   "rubric"
     t.string   "address"
     t.string   "city"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

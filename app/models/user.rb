@@ -4,13 +4,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-         validates :civility, presence:true, length: {maximum: 10}
+    has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/default_image.png"
+    validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+         
          validates :first_name, presence:true, length: {maximum: 50}
          validates :last_name, presence:true, length: {maximum: 50}
          validates :social_reason, presence:true, length: {maximum: 100}
          validates :profil, presence:true, length: {maximum: 100}
-         validates :siret, presence:true, length: {maximum: 14}
-         validates :tel, presence:true, length: {maximum: 12}
+         validates :siret, presence:true, length: {maximum: 20}
+         validates :tel, presence:true, length: {maximum: 20}
          validates :rubric, presence:true, length: {maximum: 50}
          validates :address, presence:true, length: {maximum: 150}
          validates :city, presence:true, length: {maximum: 60}
