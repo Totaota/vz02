@@ -1,6 +1,29 @@
-<h2>Bienvenue sur notre première page !!</h2>
+<h1></h1>
 
-
+<div class="row">
+    <div class="col-md-4">
+        <div class="vignette">
+            <div class="header">
+                <h2>Camping de la mer</h2>
+                <span class="adress">Camping Bretagne</span>
+                <span class="adress">29630 PLOUGASNOU</span>
+                <span class="tel">Tél. : 02 98 72 37 06</sapn>
+            </div>
+            <div class="vignette-content">
+                <div class="description">
+                    Le camping de la mer se situe sur la Pointe de Primel sur la commune de Plougasnou. Camping municipal 2 étoiles tout confort.
+                </div>
+                <div class="leftColumn">
+                    <div class="caroussel"></div>            
+                </div>
+                <div class="rightColum"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<hr>
 <%= link_to 'Inscription', new_user_registration_path %> 
 <%= link_to 'Identification', new_user_session_path %>
 <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>

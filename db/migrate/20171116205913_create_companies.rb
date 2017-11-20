@@ -13,10 +13,9 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :offer
       t.string :product
       t.string :creation_date
-      t.string :website
       t.integer :staff
       t.integer :turnover
-      
+      t.string :website
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

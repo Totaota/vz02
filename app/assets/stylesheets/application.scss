@@ -1,9 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
-//@import "font-awesome-sprockets";
-//@import "font-awesome";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
+body {font-family:roboto, sans-serif;}
+
+h2{font-size: 16px; line-height: 21px; font-family:roboto, sans-serif; font-weight:700;}
 
 .avatar-small {
     width: 28px;
@@ -34,7 +37,7 @@ body {
   
 .navbar-default {
      
-     background-color: #FFFFFF;
+     background-color: #454B52;
      
      }
   
@@ -95,6 +98,7 @@ body {
      background-color: #edefed;
      font-size: 18px;
      font-weight: 400;
+     text-align: center;
      
      }
      
@@ -433,3 +437,10 @@ input[type="checkbox"]:checked:before {
    outline:none;
  
  }
+ 
+ 
+ .vignette .header {background:#454B52; min-height:50px; padding: 10px 15px 10px 15px;}
+ .vignette .header h2 {padding: 0 0 5px 0; color: #00C7ED; margin:0;}
+ .vignette .header .adress {display:block; font-weight: 400; font-style: italic;}
+ .vignette .header .tel {font-weight:700;}
+.vignette .header .adress, .vignette .header .tel {color:#fff;}

@@ -1,0 +1,87 @@
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Création de votre mini-site
+        </div>
+        <div class="panel-body">
+            <div class="container">
+                
+                <%= form_for @company do |f| %>
+                    <%= render 'shared/errors' %>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :social_reason %><br/>
+                                <%= f.text_field :social_reason, class: "form-control", placeholder: "Nom de ma super entreprise" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :email_company %><br/>
+                                <%= f.text_field :email_company, class: "form-control", placeholder: "Email affiché sur votre mini-site" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :address_company %><br/>
+                                <%= f.text_field :address_company, class: "form-control", placeholder: "Adresse de votre entreprise" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :legal_status %><br/>
+                                <%= f.text_field :legal_status, class: "form-control", placeholder: "Statut légal de votre entreprise" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group">
+                                <%= f.label :rcs %><br/>
+                                <%= f.text_field :rcs, class: "form-control", placeholder: "Code RCS (non obligatoire)" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :description %><br/>
+                                <%= f.text_area :description, rows: 5,  class: "form-control", placeholder: "Faites une description de votre entreprise (800 caractères)" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :offer %><br/>
+                                <%= f.text_area :offer, rows: 5,  class: "form-control", placeholder: "Décrivez les produits, services ... que vous proposez (800 caractères)" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :creation_date %><br/>
+                                <%= f.text_field :creation_date, class: "form-control", placeholder: "Date de création de votre entreprise (année)" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :staff %><br/>
+                                <%= f.text_field :staff, class: "form-control", placeholder: "Effectif de votre entreprise" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :turnover %><br/>
+                                <%= f.text_field :turnover, class: "form-control", placeholder: "Chiffre d'affaire de l'année précédente (non-obligatoire)" %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <%= f.label :website %><br/>
+                                <%= f.text_field :website, class: "form-control", placeholder: "Adresse de votre site web : www.monsite.fr" %>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <%= f.check_box :active %> Voulez-vous que votre annonce soit visible sur vizioo.com ?
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <%= f.submit "Je valide mon annonce", class: "btn btn-primary"%>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>

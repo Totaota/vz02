@@ -34,6 +34,22 @@ fr:
         rubric: Rubrique
         address: Adresse
         city: Ville
+      company:
+        social_reason: Raison sociale
+        email_company: Email de l'entreprise
+        address_company: Adresse de l'entreprise
+        tel_company: Téléphone de l'enteprise
+        legal_status: Statut legal
+        num_tva: Numéro TVA intercommunautaire
+        rcs: Code RCS
+        ape_code: Code APE
+        description: En bref
+        offer: Nous proposons
+        product: Produit
+        creation_date: Date de création
+        staff: Effectif
+        turnover: Chiffre d'affaires
+        website: Site Web
     models:
       user: Utilisateur
   devise:
