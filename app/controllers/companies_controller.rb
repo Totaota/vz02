@@ -15,7 +15,7 @@ before_action :authenticate_user!, except: [:show]
                 if @company.save
                     redirect_to @company, notice:"Votre entreprise a été ajoutée avec succès"
                 else
-                    render :create
+                    render :new
                 end
     end
     

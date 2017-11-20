@@ -1,5 +1,6 @@
 class Company < ActiveRecord::Base
   belongs_to :user
+  has_many :photos
   
   validates :social_reason, presence: true, length: {maximum: 100}
   validates :email_company, presence: true, length: {maximum: 100}
