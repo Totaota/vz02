@@ -5,9 +5,9 @@
         <div class="panel-body">
             <div class="container">
                 
-                <%= form_for @company do |f| %>
+                <%= form_for @company, html: {multipart: true} do |f| %>
                     <%= render 'shared/errors' %>
-                        <div class="row">
+                        <div class="row"> 
                             <div class="form-group">
                                 <%= f.label :social_reason %><br/>
                                 <%= f.text_field :social_reason, class: "form-control", placeholder: "Nom de ma super entreprise" %>
@@ -31,12 +31,12 @@
                                 <%= f.text_field :legal_status, class: "form-control", placeholder: "Statut légal de votre entreprise" %>
                             </div>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                                 <div class="form-group">
                                 <%= f.label :rcs %><br/>
                                 <%= f.text_field :rcs, class: "form-control", placeholder: "Code RCS (non obligatoire)" %>
-                            </div>
-                        </div>
+                            </div> 
+                        </div> !-->
                         <div class="row">
                             <div class="form-group">
                                 <%= f.label :description %><br/>
@@ -73,12 +73,25 @@
                                 <%= f.text_field :website, class: "form-control", placeholder: "Adresse de votre site web : www.monsite.fr" %>
                             </div>
                         </div>
-                    <div class="row">
+                        <div class="row">
                         <div class="form-group">
                             <%= f.check_box :active %> Voulez-vous que votre annonce soit visible sur vizioo.com ?
                         </div>
                     </div>
-                    <div class="actions">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <span class="btn btn-default btn-file">
+                                        <i class="fa fa-cloud-upload fa-lg"> </i> Télécharger vos photos !
+                                        <%= file_field_tag "images[]", type: :file, multiple: true %>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="photos"><%= render 'photos/list' %></div>
+                        <br>
+                        <div class="actions">
                         <%= f.submit "Je valide mon annonce", class: "btn btn-primary"%>
                     </div>
                 <% end %>
