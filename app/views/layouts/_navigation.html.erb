@@ -13,8 +13,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
         <% if (!user_signed_in?) %> 
-        
-              <li><%= link_to 'Créer votre mini-site web ICI', new_user_registration_path%></li>
+              
+              <li><%= link_to 'Inscription', new_user_registration_path%></li>
               <li><%= link_to 'Connexion', new_user_session_path %></li>
               
         <% else %>
@@ -26,7 +26,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag avatar_url(current_user), class:"img-circle avatar-small" %>  <%= current_user.first_name %> <%= current_user.last_name %><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                <li><%= link_to 'Mon entreprise active', root_path %></li>
+                <li><%= link_to 'Mon entreprise', companies_path %></li>
                 <li><%= link_to 'Modifier mon profil', edit_user_registration_path %></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to 'Déconnexion',  destroy_user_session_path, method: :delete %></li>

@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        
+        <!-- Photo principale de l'annonce -->
+        <div class="row">
+            <div class="col-md-12">
+                <%= image_tag @photos[0].image.url(), class:"img-responsive" if @photos.length > 0 %>
+            </div>
+        </div>
+        
+        <br>
+        
+        <!-- Information principales -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-3 text center">
+                        <%= image_tag avatar_url(current_user), class:"img-circle avatar-large" %>
+                        <br>
+                        <h3><%= @company.social_reason %></h3><br>
+                        <%= @user.rubric %><br>
+                        <%= @company.address_company %><br>
+                        <%= @user.tel %><br>
+                        <div class="row text-center row-space-1">
+                            <h1>LA</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

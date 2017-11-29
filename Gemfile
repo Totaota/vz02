@@ -21,6 +21,7 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'font-awesome-sass'
 
+
 gem 'paperclip'
 gem 'paperclip-cloudinary'
 
@@ -35,8 +36,16 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+gem 'material_design_lite-sass'
+#gem 'font-roboto-rails', '~> 0.0.2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+gem 'activeadmin'
+gem 'active_admin_theme'
+
+gem 'geocoder'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

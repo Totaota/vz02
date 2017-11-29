@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  has_one :user
+  belongs_to :user
   has_many :photos
   
   validates :social_reason, presence: true, length: {maximum: 100}
@@ -16,4 +16,8 @@ class Company < ActiveRecord::Base
   validates :staff, numericality: {only_integer: true, greather_than: 1}
   #validates :turnover, numericality: {only_integer: true, greather_than: 1000}
   validates :website, presence: true, length: {maximum: 100}
+ 
+#Google maps     
+  geocoded_by :address_company
+  after_validation :geocode, if: :address_company_changed?
 end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   devise_for :users, :path => '', 
                :path_names=>{:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
                :controllers=>{:registrations => 'registrations', :companies => 'create'}
@@ -7,8 +10,8 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show]
   resources :companies
+  
   resources :photos
-
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

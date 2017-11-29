@@ -4,7 +4,7 @@ before_action :set_company, only: [:show, :edit, :update]
 before_action :authenticate_user!, except: [:show]
 #before_action :require_same_user, except: [:edit, :update]
     def index
-        @company = current_user.company
+        @company = Company.all
     end
     def new
        @company = Company.new
@@ -27,7 +27,8 @@ before_action :authenticate_user!, except: [:show]
     end
     
     def show
-       @photos = @company.photos 
+       @photos = @company.photos
+       @user = User.find(params[:id]) 
     end
     def edit
         @photos = @company.photos

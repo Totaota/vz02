@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_one :company
+  belongs_to :company
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
@@ -17,7 +17,9 @@ class User < ActiveRecord::Base
          validates :rubric, presence:true, length: {maximum: 50}
          validates :address, presence:true, length: {maximum: 150}
          validates :city, presence:true, length: {maximum: 60}
-         
-         
+
+#Google maps      
+#    geocoded_by :address_company
+#    after_validation :geocode, if: :address_changed?  
          
 end
